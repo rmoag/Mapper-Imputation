@@ -87,9 +87,6 @@ ptm = proc.time()
     k = 1
     for(j in seq(1,ncol(ranges),2)){
       missingIndices = which(is.na(pointCloud[,k]))
-      if(length(bins[[r]][-which(!is.na(match(bins[[r]],missingIndices)))]) > 0){
-        pts = bins[[r]][-which(!is.na(match(bins[[r]],missingIndices)))]
-      }
       ranges[r,j] = range(pointCloudComplete[pts,k])[1]
       ranges[r,j + 1] = range(pointCloudComplete[pts,k])[2]
       k = k + 1
